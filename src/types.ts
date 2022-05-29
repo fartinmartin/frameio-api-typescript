@@ -322,14 +322,7 @@ export interface Text {
 export interface EmailBranding {
   accent_color: string;
   background_color: string;
-  image: Image3;
-}
-
-export interface Image3 {
-  bucket: string;
-  key: string;
-  type: string;
-  uploaded: boolean;
+  image: UploadedImage;
 }
 
 export interface SessionWatermarkTemplate {
@@ -392,19 +385,6 @@ export interface AvailableFeatures {
   secure_sharing: boolean;
   session_based_watermarking: boolean;
   team_only_comments: boolean;
-}
-
-export interface Image4 {
-  alpha: number;
-  image: Image5;
-  position: string;
-}
-
-export interface Image5 {
-  bucket: string;
-  key: string;
-  type: string;
-  uploaded: boolean;
 }
 
 export interface Subscription {
