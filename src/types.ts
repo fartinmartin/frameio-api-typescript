@@ -2,6 +2,8 @@
 export type Get = <T>(path: string) => Promise<T>;
 /** @internal */
 export type Post = <T>(path: string, data: any) => Promise<T>;
+/** @internal */
+export type Put = <T>(path: string, data: any) => Promise<T>;
 
 // https://transform.tools/json-to-typescript
 export interface Asset {

@@ -19,10 +19,14 @@ export class FrameIOClient {
       axios
         .post<T>(urlBase + path, data, axiosConfig)
         .then((response) => response.data);
+    const put = <T>(path: string, data: any) =>
+      axios
+        .put<T>(urlBase + path, data, axiosConfig)
+        .then((response) => response.data);
 
     this.accounts = new AccountsAPI(get);
     this.assets = new AssetsAPI(get, post);
-    this.comments = new CommentsAPI(get, post);
+    this.comments = new CommentsAPI(get, post, put);
   }
 }
 

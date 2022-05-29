@@ -1,17 +1,9 @@
+import { CommentRequestPropsBody } from ".";
 import { Comment, Post } from "../types";
 
 export interface CreateCommentRequestProps {
   asset_id: string;
-  body: {
-    text: string;
-    annotation?: string;
-    page?: number;
-    pitch?: number;
-    timestamp?: Frames;
-    yaw?: number;
-    duration?: Frames;
-    private?: boolean;
-  };
+  body: CommentRequestPropsBody;
 }
 
 export type CreateCommentResponse = Comment;
