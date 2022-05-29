@@ -1,37 +1,36 @@
 import axios from "axios";
-import { QuipClient, EditADocumentLocation } from ".";
+import { FrameIOClient, AssetType } from ".";
 
 jest.mock("axios");
 const axiosMock = axios as jest.Mocked<typeof axios>;
-axiosMock.get.mockResolvedValue({ data: {} })
-axiosMock.post.mockResolvedValue({ data: {} })
+axiosMock.get.mockResolvedValue({ data: {} });
+axiosMock.post.mockResolvedValue({ data: {} });
 
-describe('library', () => {
-  const client = new QuipClient('');
+describe("library", () => {
+  const client = new FrameIOClient("");
 
-  it('exports a client object', () => {
+  it("exports a client object", () => {
     expect(client).toBeDefined();
   });
 
-  it('exports apis', () => {
-    expect(client).toHaveProperty('threads');
-    expect(client).toHaveProperty('users');
-    expect(client).toHaveProperty('folders');
+  it("exports apis", () => {
+    expect(client).toHaveProperty("assets");
+    expect(client).toHaveProperty("accounts");
+    expect(client).toHaveProperty("comments");
   });
 
-  it('calls axios for GET requests', () => {
-    client.threads.getThreadHtmlV2({ id: '' });
+  it("calls axios for GET requests", () => {
+    client.assets.getAsset({ asset_id: "" });
     expect(axiosMock.get).toBeCalled();
   });
 
-  it('calls axios for POST requests', () => {
-    client.threads.createADocumentOrSpreadsheet({ body: { content: '' } });
+  it("calls axios for POST requests", () => {
+    client.comments.createComment({ asset_id: "", body: { text: "" } });
     expect(axiosMock.post).toBeCalled();
   });
 
-  it('exports enums', () => {
-    const enumOption = EditADocumentLocation.APPEND;
+  it("exports enums", () => {
+    const enumOption = AssetType.FILE;
     expect(enumOption).toBeDefined();
   });
-
 });

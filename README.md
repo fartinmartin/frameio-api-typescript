@@ -1,43 +1,47 @@
-# quip-api-typescript
+# frameio-api-typescript
 
-[![codecov](https://codecov.io/gh/piotrekwitkowski/quip-api-typescript/branch/main/graph/badge.svg?token=T2G2GO9T9K)](https://codecov.io/gh/piotrekwitkowski/quip-api-typescript)
-[![npm version](https://badge.fury.io/js/quip-api-typescript.svg)](https://www.npmjs.com/package/quip-api-typescript)
+[![codecov](https://codecov.io/gh/fartinmartin/frameio-api-typescript/branch/main/graph/badge.svg?token=T2G2GO9T9K)](https://codecov.io/gh/fartinmartin/frameio-api-typescript)
+[![npm version](https://badge.fury.io/js/frameio-api-typescript.svg)](https://www.npmjs.com/package/frameio-api-typescript)
 
-This is the unofficial Node.js library to access the [Quip Automation API](https://quip.com/api/).
+This is the unofficial Node.js library to access the [Frame.io API](https://developer.frame.io/api/reference/).
 
-## Notice 
+## Notice
 
-This library should be considered as Work In Progress. The official [quip-api library](https://github.com/quip/quip-api/) wasn't updated recently and isn't maintained anymore, so I created this one that is more convenient to use thanks to typings and promises.
+This library should be considered as Work In Progress. There is no official `frameio-api` library, so I "created" this one that is more convenient to use thanks to typings and promises. "Created", because this is shamelessly ripped from @piotrekwitkowski's [`quip-api-typescript`](https://github.com/piotrekwitkowski/quip-api-typescript) 😃
 
 ## Installation
 
-`npm i quip-api-typescript`
+`npm i frameio-api-typescript`
 
 ## Usage
 
 For now, the library supports only access token auth (no OAuth).
 
 ```ts
-import { QuipClient } from 'quip-api-typescript';
+import { FrameIOClient } from "frameio-api-typescript";
 
-const ACCESS_TOKEN = 'your-access-token';
-const client = new QuipClient(ACCESS_TOKEN);
+const ACCESS_TOKEN = "your-access-token";
+const client = new FrameIOClient(ACCESS_TOKEN);
 
 // use like this
-client.threads.getThreadHtmlV2({ id: '' }).then(response => doSomething(response));
+client.assets
+  .getAsset({ asset_id: "" })
+  .then((response) => doSomething(response));
 
 // or this
-client.users.getUser({ id: 'john@acme.com' }).then(response => doSomething(response));
+client.accounts
+  .getAccount({ account_id: "eefb57e0-79f2-4bc7-9b70-99fbc175175c" })
+  .then((response) => doSomething(response));
 ```
 
 ## Documentation
 
-More methods, request and response types can be found in the [documentation](https://piotrekwitkowski.github.io/quip-api-typescript/).
+More methods, request and response types can be found in the [documentation](https://fartinmartin.github.io/frameio-api-typescript/).
 
-## Official Quip API Docs
+## Official Frame.io API Docs
 
-* [Quip Automation API Reference](https://quip.com/api/reference)
-* [Get a Personal Automation API Access Token](https://quip.com/api/personal-token)
+- [Frame.io API Reference](https://developer.frame.io/api/reference)
+- [Get a API Access Token](https://developer.frame.io/app/tokens)
 
 ## Contributing
 

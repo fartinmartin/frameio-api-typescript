@@ -1,13 +1,13 @@
 // rollup.config.js
-import typescript from '@rollup/plugin-typescript';
+import typescript from "@rollup/plugin-typescript";
 
 export default {
-  input: 'src/index.ts',
+  input: "src/index.ts",
   output: {
-    dir: 'dist',
-    format: 'esm',
-    name: 'QuipClient'
+    dir: "dist",
+    format: "esm",
+    name: "FrameIOClient",
   },
-  external: ['axios'],
-  plugins: [typescript()]
+  external: ["axios"],
+  plugins: [typescript()],
 };
