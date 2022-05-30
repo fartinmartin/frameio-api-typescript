@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/fartinmartin/frameio-api-typescript/compare/v0.0.2...v0.0.3) (2022-05-30)
+
+
+### Bug Fixes
+
+* correct updateComment test too ([1a0d3bd](https://github.com/fartinmartin/frameio-api-typescript/commit/1a0d3bdbd405d187fdb2bbf83d1e2e6c9fd7b986))
+* had the wrong types and URL for updateComment ([44d73dc](https://github.com/fartinmartin/frameio-api-typescript/commit/44d73dccf2696ddde0e669be5b9d95a58c511298))
+
 ### [0.0.2](https://github.com/fartinmartin/frameio-api-typescript/compare/v1.2.1...v0.0.2) (2022-05-30)
 
 
