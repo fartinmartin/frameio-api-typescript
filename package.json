@@ -1,6 +1,6 @@
 {
   "name": "frameio-api-typescript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is the unofficial and incomplete, but TypeScript-compatible and promise-based library to access the [Frame.io API](https://developer.frame.io/api/reference).",
   "main": "dist/index.js",
   "type": "module",
