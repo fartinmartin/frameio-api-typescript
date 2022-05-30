@@ -5,6 +5,7 @@ jest.mock("axios");
 const axiosMock = axios as jest.Mocked<typeof axios>;
 axiosMock.get.mockResolvedValue({ data: {} });
 axiosMock.post.mockResolvedValue({ data: {} });
+axiosMock.put.mockResolvedValue({ data: {} });
 
 describe("library", () => {
   const client = new FrameIOClient("");
@@ -27,6 +28,11 @@ describe("library", () => {
   it("calls axios for POST requests", () => {
     client.comments.createComment({ asset_id: "", body: { text: "" } });
     expect(axiosMock.post).toBeCalled();
+  });
+
+  it("calls axios for PUT requests", () => {
+    client.comments.updateComment({ asset_id: "", body: { text: "" } });
+    expect(axiosMock.put).toBeCalled();
   });
 
   it("exports enums", () => {
