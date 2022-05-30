@@ -11,18 +11,18 @@ export class FrameIOClient {
 
   constructor(accessToken: string, urlBase = "https://api.frame.io/v2/") {
     const axiosConfig = { headers: { Authorization: "Bearer " + accessToken } };
-    const get = <T>(path: string) =>
-      axios
-        .get<T>(urlBase + path, axiosConfig)
-        .then((response) => response.data);
-    const post = <T>(path: string, data: any) =>
-      axios
-        .post<T>(urlBase + path, data, axiosConfig)
-        .then((response) => response.data);
-    const put = <T>(path: string, data: any) =>
-      axios
-        .put<T>(urlBase + path, data, axiosConfig)
-        .then((response) => response.data);
+
+    const get = <T>(path: string) => {
+      return axios.get<T>(urlBase + path, axiosConfig).then((response) => response.data);
+    };
+
+    const post = <T>(path: string, data: any) => {
+      return axios.post<T>(urlBase + path, data, axiosConfig).then((response) => response.data);
+    };
+
+    const put = <T>(path: string, data: any) => {
+      return axios.put<T>(urlBase + path, data, axiosConfig).then((response) => response.data);
+    };
 
     this.accounts = new AccountsAPI(get);
     this.assets = new AssetsAPI(get, post);

@@ -1,10 +1,5 @@
 import { Get } from "../types";
-
-import {
-  getAccount,
-  GetAccountRequestProps,
-  GetAccountResponse,
-} from "./getAccount";
+import { getAccount, GetAccountRequestProps, GetAccountResponse } from "./getAccount";
 
 export class AccountsAPI {
   /** [Frame.io API Reference](https://developer.frame.io/api/reference/operation/getAccount/) */

@@ -1,10 +1,5 @@
 import { Get, Post } from "../types";
-import {
-  AssetType,
-  getAsset,
-  GetAssetRequestProps,
-  GetAssetResponse,
-} from "./getAsset";
+import { AssetType, getAsset, GetAssetRequestProps, GetAssetResponse } from "./getAsset";
 
 export class AssetsAPI {
   /** [Frame.io API Reference](https://frameio.com/dev/automation/documentation/current#operation/getThreadV2) */

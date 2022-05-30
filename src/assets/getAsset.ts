@@ -16,8 +16,8 @@ export const getAsset = (get: Get) => (props: GetAssetRequestProps) => {
   const { asset_id, parameters } = props;
 
   const p = parameters || { include_deleted: "true", type: "file" };
-  const s = Object.fromEntries(Object.entries(p).map(([k, v]) => [k, `${v}`]));
-  const query = new URLSearchParams(s).toString();
+  const params = Object.fromEntries(Object.entries(p).map(([k, v]) => [k, `${v}`]));
+  const query = new URLSearchParams(params).toString();
 
   return get<GetAssetResponse>(`assets/${asset_id}?${query}`);
 };
