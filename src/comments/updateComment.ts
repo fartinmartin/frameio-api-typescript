@@ -2,7 +2,7 @@ import { CommentRequestPropsBody } from ".";
 import { Comment, Put } from "../types";
 
 export interface UpdateCommentRequestProps {
-  asset_id: string;
+  comment_id: string;
   body: CommentRequestPropsBody;
 }
 
@@ -12,8 +12,8 @@ export type UpdateCommentResponse = Comment;
 /** @internal */
 export const updateComment = (put: Put) => (props: UpdateCommentRequestProps) => {
   // REQUEST BODY SCHEMA: application/json
-  const { asset_id, body } = props;
-  const s = Object.fromEntries(Object.entries(body).map(([k, v]) => [k, `${v}`]));
+  const { comment_id, body } = props;
+  const params = Object.fromEntries(Object.entries(body).map(([k, v]) => [k, `${v}`]));
 
-  return put<UpdateCommentResponse>(`assets/${asset_id}/comments`, new URLSearchParams(s));
+  return put<UpdateCommentResponse>(`comments/${comment_id}`, new URLSearchParams(params));
 };
