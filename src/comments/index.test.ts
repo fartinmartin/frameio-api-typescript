@@ -27,7 +27,7 @@ describe("comment", () => {
   });
 
   it("has callable updateComment method that uses put", () => {
-    api.updateComment({ asset_id: "", body: { text: "" } });
+    api.updateComment({ comment_id: "", body: { text: "" } });
     expect(put).toBeCalledTimes(1);
   });
 });
