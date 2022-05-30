@@ -31,7 +31,7 @@ describe("library", () => {
   });
 
   it("calls axios for PUT requests", () => {
-    client.comments.updateComment({ asset_id: "", body: { text: "" } });
+    client.comments.updateComment({ comment_id: "", body: { text: "" } });
     expect(axiosMock.put).toBeCalled();
   });
 
