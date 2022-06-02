@@ -1,4 +1,4 @@
-import { Asset, Get } from "../types";
+import { Asset, Get, StreamAsset } from "../types";
 
 export interface GetAssetRequestProps {
   asset_id: string;
@@ -8,7 +8,7 @@ export interface GetAssetRequestProps {
   };
 }
 
-export type GetAssetResponse = Asset;
+export type GetAssetResponse = Asset | StreamAsset; // TODO: ImageAsset | DocumentAsset
 
 // https://developer.frame.io/api/reference/operation/getAsset/
 /** @internal */
