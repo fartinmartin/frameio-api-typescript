@@ -1,7 +1,7 @@
-import { Asset, Get, StreamAsset } from "../types";
+import { Asset, ID, Get, StreamAsset } from "../types";
 
 export interface GetAssetRequestProps {
-  asset_id: string;
+  asset_id: string | ID;
   parameters?: {
     include_deleted: boolean;
     type: AssetType | AssetType[];

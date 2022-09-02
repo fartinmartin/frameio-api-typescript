@@ -1,13 +1,30 @@
 /** @internal */
-export type Get = <T>(path: string) => Promise<T>;
+export type Get = <T>(path: string | ID) => Promise<T>;
 /** @internal */
-export type Post = <T>(path: string, data: any) => Promise<T>;
+export type Post = <T>(path: string | ID, data: any) => Promise<T>;
 /** @internal */
-export type Put = <T>(path: string, data: any) => Promise<T>;
+export type Put = <T>(path: string | ID, data: any) => Promise<T>;
+
+export type ID = `${string}-${string}-${string}-${string}-${string}`;
+
+export type Quality =
+  | "thumb"
+  | "thumb_540"
+  | "thumb_scrub"
+  | "image_full"
+  | "image_high"
+  | "cover"
+  | "h264_360"
+  | "h264_540"
+  | "h264_720"
+  | "h264_1080_best"
+  | "h264_2160"
+  | "page_proxy"
+  | "thumb_orig_ar_540";
 
 // https://transform.tools/json-to-typescript
 export interface Asset {
-  account_id: string;
+  account_id: ID;
   asset_type: string;
   archive_from: string;
   bundle: boolean;
@@ -34,6 +51,42 @@ export interface Asset {
   user_permissions: UserPermissions;
   type: string;
   view_count: number;
+
+  h264_540: string;
+  thumb: string;
+  upload_completed_at: string;
+  video_h264_180: string;
+  h264_360: string;
+  image_full: string;
+  thumb_orig_ar_540: string;
+  timecode: string;
+  cover: string;
+  allow_original_playback: true;
+  h264_720: string;
+  includes: string[];
+  is_360: boolean;
+  status: string;
+  private: boolean;
+  h264_1080_best: string;
+  copy: boolean;
+  inserted_at: string;
+  parent_id: string;
+  uploaded_at: string;
+  creator_id: string;
+  hls_manifest: string;
+  shared: boolean;
+  updated_at: string;
+  filetype: string;
+  thumb_540: string;
+  image_small: string;
+  transcoded_at: string;
+  _type: string;
+  h264_2160: string;
+  fps: number;
+  versions: number;
+  comment_count: number;
+  duration: number;
+  public_item_count: number;
 }
 
 export interface Creator {

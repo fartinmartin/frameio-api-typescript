@@ -11,4 +11,4 @@ export class AssetsAPI {
   }
 }
 
-export { AssetType };
+export { AssetType, GetAssetResponse };
