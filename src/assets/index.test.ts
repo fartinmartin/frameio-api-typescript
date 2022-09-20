@@ -14,4 +14,9 @@ describe("assets file", () => {
     api.getAsset({ asset_id: "" });
     expect(get).toBeCalledTimes(1);
   });
+
+  it("has callable search method that uses get", () => {
+    api.search({ query: "", parameters: { account_id: "" } });
+    expect(get).toBeCalledTimes(1);
+  });
 });
